@@ -195,9 +195,67 @@ footer{
     color:#fff;
 }
 
-@media(max-width:768px){
-    .hero,.card{ grid-template-columns:1fr; text-align:center; }
+@media (max-width: 900px){
+
+    /* Reduce section padding */
+    nav,
+    .hero,
+    .project,
+    .card{
+        padding:20px;
+    }
+
+    /* Navbar stack */
+    nav{
+        flex-direction:column;
+        gap:15px;
+    }
+
+    nav ul{
+        flex-direction:column;
+        gap:12px;
+        text-align:center;
+    }
+
+    /* Hero layout */
+    .hero{
+        grid-template-columns:1fr;
+        text-align:center;
+    }
+
+    .hero h1{
+        font-size:2rem;
+    }
+
+    .hero img{
+        width:100%;
+        margin-top:20px;
+    }
+
+    /* Cards */
+    .card{
+        grid-template-columns:1fr;
+        padding:20px;
+    }
+
+    .card img{
+        width:100%;
+    }
+
+    /* Feedback buttons fix */
+    .button-zone{
+        height:200px;
+    }
+
+    #yesBtn{
+        left:20%;
+    }
+
+    #noBtn{
+        left:55%;
+    }
 }
+
 </style>
 </head>
 
@@ -336,6 +394,7 @@ yesBtn.onclick=()=>{
 
 </body>
 </html>
+
 
 
 
