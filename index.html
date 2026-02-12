@@ -198,6 +198,27 @@ footer{
 @media(max-width:768px){
     .hero,.card{ grid-template-columns:1fr; text-align:center; }
 }
+    /* Default (Desktop View) */
+body {
+    background-color: white;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Mobile View */
+@media (max-width: 768px) {
+    body {
+        background-color: lightblue;
+    }
+
+    .container {
+        flex-direction: column;
+        text-align: center;
+    }
+}
 </style>
 </head>
 
@@ -336,6 +357,7 @@ yesBtn.onclick=()=>{
 
 </body>
 </html>
+
 
 
 
