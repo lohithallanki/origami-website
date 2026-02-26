@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <title>ORIGAMI.WE</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
 
 <style>
@@ -12,13 +12,13 @@
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:'Segoe UI', sans-serif;
+    font-family:'Poppins', sans-serif;
 }
 
 html{ scroll-behavior:smooth; }
 
 body{
-    background:#ffeb00;
+    background: linear-gradient(135deg, #fff9c4, #f3e5f5);
     color:#222;
 }
 
@@ -32,8 +32,12 @@ nav{
     justify-content:space-between;
     align-items:center;
     padding:20px 60px;
-    background:#ffef3b;
-    box-shadow:0 5px 20px rgba(0,0,0,0.1);
+    background:rgba(255,255,255,0.6);
+    backdrop-filter:blur(12px);
+    border-bottom:1px solid rgba(255,255,255,0.3);
+    position:sticky;
+    top:0;
+    z-index:1000;
 }
 
 .brand{
@@ -87,7 +91,9 @@ nav a:hover{
 
 .hero h1{
     font-size:3.2rem;
-    color:var(--violet);
+    background:linear-gradient(45deg,#6a5acd,#9c27b0);
+    -webkit-background-clip:text;
+    color:transparent;
 }
 
 .hero h1 span{ color:#4b3cc4; }
@@ -95,13 +101,20 @@ nav a:hover{
 /* BUTTON */
 .btn{
     display:inline-block;
-    padding:12px 32px;
-    background:var(--violet);
+    padding:14px 34px;
+    background:linear-gradient(45deg, #6a5acd, #9c27b0);
     color:#fff;
     border:none;
-    border-radius:30px;
+    border-radius:50px;
     cursor:pointer;
     margin-top:20px;
+    font-weight:600;
+    transition:0.3s ease;
+}
+
+.btn:hover{
+    transform:scale(1.08);
+    box-shadow:0 8px 20px rgba(106,90,205,0.4);
 }
 
 /* PROJECTS */
@@ -129,7 +142,14 @@ nav a:hover{
     border-radius:30px;
     box-shadow:0 10px 25px rgba(0,0,0,0.15);
 }
+.card{
+    transition:0.4s ease;
+}
 
+.card:hover{
+    transform:translateY(-12px);
+    box-shadow:0 20px 40px rgba(0,0,0,0.2);
+}
 .card img{
     width:100%;
     border-radius:20px;
@@ -245,9 +265,15 @@ footer{
     }
 
     .hero img{
-        width:100%;
-        margin-top:20px;
-    }
+    width:100%;
+    animation:float 4s ease-in-out infinite;
+}
+
+@keyframes float{
+    0%{ transform:translateY(0px);}
+    50%{ transform:translateY(-15px);}
+    100%{ transform:translateY(0px);}
+}
 
     /* Cards */
     .card{
@@ -290,7 +316,7 @@ footer{
     </ul>
 </nav>
 
-<section class="hero">
+<section class="hero">  
     <div>
         <h1>Where Paper Folds into <span>Imagination</span></h1>
         <p>Origami is the art of turning simple paper into beautiful shapes.</p>
@@ -411,6 +437,7 @@ yesBtn.onclick=()=>{
 
 </body>
 </html>
+
 
 
 
