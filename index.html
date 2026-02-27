@@ -23,7 +23,11 @@ body{
 }
 
 :root{
-    --violet:#6a5acd;
+    --primary:#7c3aed;
+    --secondary:#c084fc;
+    --dark:#0f172a;
+    --light:#f8fafc;
+    --accent:#f472b6;
 }
 
 /* NAVBAR */
@@ -186,7 +190,20 @@ nav a:hover{
     border-radius:18px;
     margin-bottom:15px;
 }
+.toggle-btn{
+    background:var(--primary);
+    color:white;
+    border:none;
+    padding:8px 16px;
+    border-radius:20px;
+    cursor:pointer;
+    font-weight:600;
+    transition:0.3s;
+}
 
+.toggle-btn:hover{
+    transform:scale(1.1);
+}
 .button-zone{
     position:relative;
     width:100%;
@@ -274,7 +291,23 @@ footer{
     50%{ transform:translateY(-15px);}
     100%{ transform:translateY(0px);}
 }
+.dark-mode{
+    background:var(--dark);
+    color:var(--light);
+}
 
+.dark-mode nav{
+    background:rgba(15,23,42,0.8);
+}
+
+.dark-mode .card{
+    background:#1e293b;
+    color:white;
+}
+
+.dark-mode footer{
+    background:#020617;
+}
     /* Cards */
     .card{
         grid-template-columns:1fr;
@@ -313,6 +346,7 @@ footer{
         <li><a href="index.html">Home</a></li>
         <li><a href="login.html">Login</a></li>
         <li><a id="openFeedback">Feedback</a></li>
+        <li><button id="themeToggle" class="toggle-btn">🌙</button></li>
     </ul>
 </nav>
 
@@ -433,10 +467,22 @@ yesBtn.onclick=()=>{
     result.style.display="block";
     confettiInstance({particleCount:300,spread:120});
 };
+    const toggleBtn = document.getElementById("themeToggle");
+
+toggleBtn.onclick = () => {
+    document.body.classList.toggle("dark-mode");
+    
+    if(document.body.classList.contains("dark-mode")){
+        toggleBtn.textContent = "☀";
+    } else {
+        toggleBtn.textContent = "🌙";
+    }
+};
 </script>
 
 </body>
 </html>
+
 
 
 
