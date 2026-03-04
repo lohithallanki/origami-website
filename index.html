@@ -190,6 +190,20 @@ nav a:hover{
     border-radius:18px;
     margin-bottom:15px;
 }
+    .toggle-btn{
+    background:var(--violet);
+    color:white;
+    border:none;
+    padding:8px 16px;
+    border-radius:20px;
+    cursor:pointer;
+    font-weight:600;
+    transition:0.3s;
+}
+
+.toggle-btn:hover{
+    transform:scale(1.1);
+}
 .toggle-btn{
     background:var(--primary);
     color:white;
@@ -346,8 +360,8 @@ footer{
         <li><a href="index.html">Home</a></li>
         <li><a href="login.html">Login</a></li>
         <li><a id="openFeedback">Feedback</a></li>
-        <li><button id="themeToggle" class="toggle-btn">🌙</button></li>
     </ul>
+    <button id="themeToggle" class="toggle-btn">🌙</button>
 </nav>
 
 <section class="hero">  
@@ -482,6 +496,7 @@ themeToggle.addEventListener("click", function(){
 
 </body>
 </html>
+
 
 
 
