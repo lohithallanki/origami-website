@@ -305,6 +305,45 @@ footer{
     50%{ transform:translateY(-15px);}
     100%{ transform:translateY(0px);}
 }
+    /* DROPDOWN MENU */
+
+.dropdown{
+    position:relative;
+}
+
+.dropdown-content{
+    display:none;
+    position:absolute;
+    background:white;
+    list-style:none;
+    top:40px;
+    left:0;
+    padding:10px;
+    border-radius:12px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.15);
+}
+
+.dropdown-content li{
+    margin:8px 0;
+}
+
+.dropdown-content a{
+    display:block;
+    padding:8px 15px;
+    border-radius:8px;
+    color:#333;
+    text-decoration:none;
+    font-weight:500;
+}
+
+.dropdown-content a:hover{
+    background:var(--secondary);
+    color:white;
+}
+
+.dropdown:hover .dropdown-content{
+    display:block;
+}
     /* Cards */
     .card{
         grid-template-columns:1fr;
@@ -357,11 +396,19 @@ footer{
         <span>ORIGAMI.WE</span>
     </div>
     <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="login.html">Login</a></li>
-        <li><a id="openFeedback">Feedback</a></li>
-        <li><button id="themeToggle" class="toggle-btn">🌙</button></li>
-    </ul>
+<li class="dropdown">
+<a href="#">Menu ▾</a>
+
+<ul class="dropdown-content">
+<li><a href="index.html">Home</a></li>
+<li><a href="login.html">Login</a></li>
+<li><a id="openFeedback">Feedback</a></li>
+</ul>
+
+</li>
+
+<li><button id="themeToggle" class="toggle-btn">🌙</button></li>
+</ul>
    
 </nav>
 
@@ -497,6 +544,7 @@ themeToggle.addEventListener("click", function(){
 
 </body>
 </html>
+
 
 
 
